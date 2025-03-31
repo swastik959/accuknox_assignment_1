@@ -81,9 +81,9 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
-          kubectl apply -f k8s/ingress.yaml
+          kubectl apply -f k8s/wisecow-deployment.yaml
+          kubectl apply -f k8s/wisecow-service.yaml
+          kubectl apply -f k8s/wisecow-ingress-tls.yaml
 
       - name: Update Deployment to Use Latest Image
         run: |
