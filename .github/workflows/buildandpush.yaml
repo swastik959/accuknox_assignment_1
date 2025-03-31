@@ -79,10 +79,6 @@ jobs:
           mkcert -cert-file tls.crt -key-file tls.key wisecow.example.com
           kubectl create secret tls wisecow-tls-cert --cert=tls.crt --key=tls.key
 
-      - name: Load Docker Image into Kind Cluster
-        run: |
-          kind load docker-image ${{ secrets.DOCKER_USERNAME }}/wisecow-app:latest --name kind
-
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f k8s/deployment.yaml
