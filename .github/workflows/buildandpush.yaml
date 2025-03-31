@@ -87,11 +87,11 @@ jobs:
 
       - name: Update Deployment to Use Latest Image
         run: |
-          kubectl set image deployment/wisecow-app wisecow-app=${{ secrets.DOCKER_USERNAME }}/wisecow-app:latest --record
+          kubectl set image deployment/wisecow wisecow-app=${{ secrets.DOCKER_USERNAME }}/wisecow-app:latest --record
 
       - name: Restart Deployment to Apply Image Update
         run: |
-          kubectl rollout restart deployment/wisecow-app
+          kubectl rollout restart deployment/wisecow
 
       - name: Verify Deployment
         run: |
